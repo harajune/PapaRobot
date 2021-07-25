@@ -15,7 +15,7 @@ PhysicalButtonEvent::~PhysicalButtonEvent() {
 void PhysicalButtonEvent::listen()
 {
     button->read();
-    if (button->isPressed())
+    if (button->wasPressed())
     {
         for (auto listener : listeners)
         {
