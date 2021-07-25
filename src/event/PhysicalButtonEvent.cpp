@@ -8,10 +8,6 @@ PhysicalButtonEvent::PhysicalButtonEvent(Button *button)
     this->button = button;
 }
 
-// suppress warning
-PhysicalButtonEvent::~PhysicalButtonEvent() {
-}
-
 void PhysicalButtonEvent::listen()
 {
     button->read();

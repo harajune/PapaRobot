@@ -11,7 +11,6 @@ class PhysicalButtonEvent : public Event<void(PhysicalButtonEvent*)>
 {
 public:
     PhysicalButtonEvent(Button *button);
-    ~PhysicalButtonEvent();
     virtual void listen() override;
 
 private:
