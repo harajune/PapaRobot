@@ -7,6 +7,7 @@
 
 #include "mode/Mode.hpp"
 #include "event/PhysicalButtonEvent.hpp"
+#include "mode/face/FaceLip.hpp"
 
 class FaceMode : public Mode
 {
@@ -19,6 +20,7 @@ public:
 private:
     PhysicalButtonEvent speakClickedEvent = PhysicalButtonEvent(&M5.BtnA);
     m5avatar::Avatar avatar;
+    FaceLip lip = FaceLip(&avatar);
 
     void speakClicked(PhysicalButtonEvent *event);
 };

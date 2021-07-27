@@ -17,6 +17,8 @@ void modeButtonClicked(PhysicalButtonEvent *event)
 void setup()
 {
     M5.begin();
+    SD.begin();
+
     Serial.begin(115200);
 
     Serial.println("begin");

@@ -3,3 +3,10 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# aques talk is a commercial software. So, I should exclude it.
+lib/libaquestalk.a
+include/aquestalk.h
+
+# don't include credentials
+src/credentials.h

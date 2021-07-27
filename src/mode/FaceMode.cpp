@@ -3,16 +3,21 @@
 #include "event/PhysicalButtonEvent.hpp"
 #include "mode/FaceMode.hpp"
 #include "mode/ClockMode.hpp"
+#include "tts/AquesTalkTTS.h"
 #include "modes.h"
+#include "credentials.h"
 
 void FaceMode::setup()
 {
+    TTS.createK(AQUESTALK_KEY);
+
     speakClickedEvent.addListener(&FaceMode::speakClicked, this);
 }
 
 void FaceMode::loop()
 {
     speakClickedEvent.listen();
+    lip.lipSync();
 }
 
 void FaceMode::start()
@@ -27,6 +32,5 @@ void FaceMode::stop()
 
 void FaceMode::speakClicked(PhysicalButtonEvent *event)
 {
-    Serial.println("face");
-    switchMode(&clockMode);
+    TTS.playK("こんにちは", 80);
 }
