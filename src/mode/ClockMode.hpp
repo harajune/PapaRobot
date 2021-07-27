@@ -12,6 +12,8 @@ class ClockMode : public Mode
 public:
     virtual void setup() override;
     virtual void loop() override;
+    virtual void start() override;
+    virtual void stop() override;
 
 private:
     PhysicalButtonEvent speakClickedEvent = PhysicalButtonEvent(&M5.BtnA);

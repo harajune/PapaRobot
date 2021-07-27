@@ -3,7 +3,7 @@
 #include "event/PhysicalButtonEvent.hpp"
 #include "mode/FaceMode.hpp"
 #include "mode/ClockMode.hpp"
-#include "common.h"
+#include "modes.h"
 
 void FaceMode::setup()
 {
@@ -15,8 +15,18 @@ void FaceMode::loop()
     speakClickedEvent.listen();
 }
 
+void FaceMode::start()
+{
+    avatar.start();
+}
+
+void FaceMode::stop()
+{
+    avatar.stop();
+}
+
 void FaceMode::speakClicked(PhysicalButtonEvent *event)
 {
     Serial.println("face");
-    switchMode(new ClockMode());
+    switchMode(&clockMode);
 }

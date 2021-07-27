@@ -8,6 +8,8 @@ public:
     virtual ~Mode() = default;
     virtual void setup() = 0;
     virtual void loop() = 0;
+    virtual void start() = 0;
+    virtual void stop() = 0;
 };
 
 #endif

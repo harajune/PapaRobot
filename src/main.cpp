@@ -1,11 +1,13 @@
 #include <Arduino.h>
 
-#include "common.h"
+#include "modes.h"
 #include "mode/Mode.hpp"
-#include "mode/FaceMode.hpp"
 #include "event/PhysicalButtonEvent.hpp"
 
 PhysicalButtonEvent *buttonB;
+
+FaceMode faceMode;
+ClockMode clockMode;
 
 void modeButtonClicked(PhysicalButtonEvent *event)
 {
@@ -21,7 +23,10 @@ void setup()
     buttonB = new PhysicalButtonEvent(&M5.BtnB);
     buttonB->addListener(modeButtonClicked);
 
-    switchMode(new FaceMode());
+    faceMode.setup();
+    clockMode.setup();
+
+    switchMode(&faceMode);
 }
 
 void loop()
