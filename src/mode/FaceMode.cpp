@@ -32,5 +32,5 @@ void FaceMode::stop()
 
 void FaceMode::speakClicked(PhysicalButtonEvent *event)
 {
-    TTS.playK("こんにちは", 80);
+    TTS.playK("じゅりちゃんはおなかすいてますか？", 80);
 }
